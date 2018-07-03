@@ -1,0 +1,193 @@
+[
+    {
+        "id": "90758193.f39ef",
+        "type": "http in",
+        "z": "f647e236.b6574",
+        "name": "Webhooks",
+        "url": "/line_hook",
+        "method": "post",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 82,
+        "y": 34,
+        "wires": [
+            [
+                "21472a71.e0c836"
+            ]
+        ]
+    },
+    {
+        "id": "21472a71.e0c836",
+        "type": "function",
+        "z": "f647e236.b6574",
+        "name": "getText",
+        "func": "//flowへ格納\nflow.set(\"replyToken\",msg.payload.events[0].replyToken);\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 162,
+        "y": 114,
+        "wires": [
+            [
+                "a80c56f8.1b9cc8",
+                "871b3619.7571a8",
+                "24ddf978.04bae6"
+            ]
+        ]
+    },
+    {
+        "id": "a80c56f8.1b9cc8",
+        "type": "debug",
+        "z": "f647e236.b6574",
+        "name": "",
+        "active": true,
+        "console": "false",
+        "complete": "false",
+        "x": 432,
+        "y": 34,
+        "wires": []
+    },
+    {
+        "id": "871b3619.7571a8",
+        "type": "http response",
+        "z": "f647e236.b6574",
+        "name": "",
+        "x": 472,
+        "y": 114,
+        "wires": []
+    },
+    {
+        "id": "d9d94809.e2ebb8",
+        "type": "http request",
+        "z": "f647e236.b6574",
+        "name": "Reply Message",
+        "method": "POST",
+        "ret": "obj",
+        "url": "https://api.line.me/v2/bot/message/reply",
+        "x": 640,
+        "y": 220,
+        "wires": [
+            [
+                "a7020436.df5118"
+            ]
+        ]
+    },
+    {
+        "id": "6968d7e6.9608a8",
+        "type": "function",
+        "z": "f647e236.b6574",
+        "name": "createReplyMessage",
+        "func": "//flowから取り出す\nvar output_text = flow.get(\"text\");\n\nvar post_request = {\n    \"headers\": {\n        \"content-type\": \"application/json; charset=UTF-8\",\n        \"Authorization\": \" Bearer \" + \"{<LINEアクセストークンに置き換えてください>}\"\n    },\n    \"payload\": {\n        //\"replyToken\": msg.payload.events[0].replyToken,\n        \"replyToken\": flow.get(\"replyToken\"),\n        \"messages\": [\n            {\n                \"type\": \"text\",\n                \"text\": msg.payload.optext + \"ฅ^•ﻌ•^ฅ\"\n            }\n        ]\n    }\n};\n\nreturn post_request;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 500,
+        "y": 300,
+        "wires": [
+            [
+                "d9d94809.e2ebb8"
+            ]
+        ]
+    },
+    {
+        "id": "a7020436.df5118",
+        "type": "debug",
+        "z": "f647e236.b6574",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "complete": "true",
+        "x": 732,
+        "y": 294,
+        "wires": []
+    },
+    {
+        "id": "11a25465.d5496c",
+        "type": "watson-conversation-v1",
+        "z": "f647e236.b6574",
+        "name": "",
+        "workspaceid": "<ワークスペースIDに置き換えてください>",
+        "multiuser": false,
+        "context": true,
+        "empty-payload": false,
+        "default-endpoint": true,
+        "service-endpoint": "https://gateway.watsonplatform.net/assistant/api",
+        "timeout": "",
+        "optout-learning": false,
+        "x": 260,
+        "y": 300,
+        "wires": [
+            [
+                "b3e8a9e8.0be628"
+            ]
+        ]
+    },
+    {
+        "id": "720361a8.f2027",
+        "type": "debug",
+        "z": "f647e236.b6574",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "x": 750,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "b3e8a9e8.0be628",
+        "type": "change",
+        "z": "f647e236.b6574",
+        "name": "Watsonの戻り値から変数に格納",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload.optext",
+                "pt": "msg",
+                "to": "payload.output.text.0",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 430,
+        "y": 400,
+        "wires": [
+            [
+                "720361a8.f2027",
+                "6968d7e6.9608a8"
+            ]
+        ]
+    },
+    {
+        "id": "24ddf978.04bae6",
+        "type": "change",
+        "z": "f647e236.b6574",
+        "name": "Watson向けにパラメータ入替え",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.events.0.message.text",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 172,
+        "y": 214,
+        "wires": [
+            [
+                "11a25465.d5496c"
+            ]
+        ]
+    }
+]
