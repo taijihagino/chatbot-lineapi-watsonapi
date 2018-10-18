@@ -30,14 +30,14 @@ Note API Endpoint URL, USER, and PASSWORD.
 ※No need this operation if Node-RED will be on IBM Cloud and bind with Assistant API.
 
 ### Make Watson Assistant Workspace
+This is a workspace for Watson Assistant can train definitions and flows of chat talks for chatbot application. It has a unique ID which will be used for an application to call API.
+Select Assistant API you created.
+![Application Image](https://github.com/taijihagino/chatbot-lineapi-watsonapi/blob/master/images/004.png)
 
-Watson Assistantはチャットボットなどで利用する会話文の定義やフローを学習させることができます。そのための作業スペースをワークスペースといいます。このワークスペースには一意のIDが割り当てられ、アプリからこのAPIを呼び出す際に利用されます。
+Launch Watson Assistant Tool. Press the Launch Button.
+![Application Image](https://github.com/taijihagino/chatbot-lineapi-watsonapi/blob/master/images/005.png)
 
-先程作成したAssitant APIのサービスを選択します。
-作成済みのWatson Assistantへ
-
-ツールを起動します。
-ツールの起動ボタンをクリック
+Click the create button, open new flow window, but this time we use flow import function.
 
 ここで、Createボタンをクリックすると会話フローの新規作成となります。
 今回は予め用意した非常に簡単な会話フロー（目的と意図も設定）の定義ファイル（JSON）をインポートしてみましょう。
