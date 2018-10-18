@@ -14,22 +14,16 @@ Get real original character as a LINE chatbot for any stores to increase their s
 ## Overview
 ![Application Image](https://github.com/taijihagino/chatbot-lineapi-watsonapi/blob/master/images/001.png)
 
-6月11日、think Japanにて発表がありましたが、Code Patternsの日本語サイトを公開しました。オリジナルサイト（英語）のローカライズ版になります。
-https://developer.ibm.com/jp/
-概要
-アプリケーション構成図
-IBM Cloud側の作業
+## IBM Cloud Side
 
-■Watson Assistantの作成
+### Make Watson Assistant
+Select Watson Assistant from IBM Cloud Catalog.
+![Application Image](https://github.com/taijihagino/chatbot-lineapi-watsonapi/blob/master/images/002.png)
 
-IBM Cloudのカタログから、Watson Assistantを選択します。左側のカテゴリにてWatsonを選択するとすぐに見つけられます。
-Watson Assistantを選択
+Fill down Service Name, and select Region(US South is recomended), Org, and Space.
+You can use it as Light Plan, and then press the create button.
+![Application Image](https://github.com/taijihagino/chatbot-lineapi-watsonapi/blob/master/images/003.png)
 
-サービス名、地域・組織・スペース、料金プランを設定して作成ボタンをクリックします。
-地域：米国南部（推奨、他のリージョンでは出来ないことも米国南部だとできるケースも多いです）
-組織・スペース：自分の好きな組織・スペースを設定。
-料金プラン：無料のLiteで行きましょう！
-必要項目を設定したら作成ボタンをクリック
 
 Assistant APIが作成されたら資格情報を取得します。
 サービス資格情報メニューから資格情報を作成し、APIエンドポイントURL、ユーザー、パスワードを確認し控えておいてください。
