@@ -24,12 +24,12 @@ Fill down Service Name, and select Region(US South is recomended), Org, and Spac
 You can use it as Light Plan, and then press the create button.
 ![Application Image](https://github.com/taijihagino/chatbot-lineapi-watsonapi/blob/master/images/003.png)
 
+Get credencial information when Assistant API created.
+If the credencial has not yet created automaticaly, you can generate new credencial on Service Credencial Menu.
+Note API Endpoint URL, USER, and PASSWORD. 
+※No need this operation if Node-RED will be on IBM Cloud and bind with Assistant API.
 
-Assistant APIが作成されたら資格情報を取得します。
-サービス資格情報メニューから資格情報を作成し、APIエンドポイントURL、ユーザー、パスワードを確認し控えておいてください。
-※この手順はNode-REDがIBM Cloud上で実行されている場合でNode-REDとAssistant APIがバインドされている場合は不要です。
-
-■Watson Assistantワークスペースの作成
+### Make Watson Assistant Workspace
 
 Watson Assistantはチャットボットなどで利用する会話文の定義やフローを学習させることができます。そのための作業スペースをワークスペースといいます。このワークスペースには一意のIDが割り当てられ、アプリからこのAPIを呼び出す際に利用されます。
 
