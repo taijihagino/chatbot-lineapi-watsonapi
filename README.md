@@ -134,7 +134,7 @@ https://api.line.me/v2/bot/message/reply
 You can login LINE developers with your LINE account which can be created on your smartphone LINE app.
 
 Login LINE developers [here](https://developers.line.me/).
-![Application Image](https://github.com/taijihagino/chatbot-lineapi-watsonapi/blob/master/images/021.png)
+![Application Image](https://github.com/taijihagino/chatbot-lineapi-watsonapi/blob/master/images/022.png)
 
 ログインボタンをクリック
 ログイン
