@@ -136,42 +136,32 @@ You can login LINE developers with your LINE account which can be created on you
 Login LINE developers [here](https://developers.line.me/).
 ![Application Image](https://github.com/taijihagino/chatbot-lineapi-watsonapi/blob/master/images/022.png)
 
-ログインボタンをクリック
-ログイン
 
-■LINE developersでプロバイダーを作成
+### Create Provider
+Set your provider name. After filled out comfirm and create.
+![Application Image](https://github.com/taijihagino/chatbot-lineapi-watsonapi/blob/master/images/024.png)
+![Application Image](https://github.com/taijihagino/chatbot-lineapi-watsonapi/blob/master/images/025.png)
 
-プロバイダー名を設定します。
-プロバイダー名を設定→確認する
-作成する
+And then, click "Create Channel" button on Messaging API.
+![Application Image](https://github.com/taijihagino/chatbot-lineapi-watsonapi/blob/master/images/026.png)
 
-プロバイダーが作成されたのを確認したら、Messaging APIの「チャネルを作成する」をクリックします。
-チャネルを作成する
+### Create New Channel
+Config any informations which is needed for the channel. The each values are below; 
+```
+- App Icon Image: less than 3MB, JPEG/PNG/GIF/BMP
+- App Name: 20 charactors or less
+- App Description: 500 charactors or less
+- Plan: Developer Trial
+- Industries: Any
+- EMail Address: Any
+```
 
-■新規チャネル作成
+Agree the terms of service and then press the Agreement button.
+![Application Image](https://github.com/taijihagino/chatbot-lineapi-watsonapi/blob/master/images/030.png)
 
-チャネルに必要な情報を設定していきます。
-設定項目は下記の通り、ご自身の内容に合わせ設定します。
+Check the two check box for these agreements, and press create button.
+![Application Image](https://github.com/taijihagino/chatbot-lineapi-watsonapi/blob/master/images/031.png)
 
-・アプリアイコン画像：好きな画像（3MB以内, JPEG/PNG/GIF/BMP形式）
-・アプリ名：最大20文字
-・アプリ説明：最大500文字
-・プラン：Developer Trial
-・大業種・小業種：一番近いものを選択
-・メールアドレス：お知らせ等の配信用
-
-まずは、アプリアイコン画像を登録します。そのままでもOKですが、その場合はチャット画面にアイコンは表示されません。
-アプリアイコン登録
-
-次にアプリ名、アプリ説明、プランをそれぞれ設定します。プランはDeveloper Trialで行きましょう。
-アプリ名、説明を記述し、プランを選択
-
-業種とメールアドレスを登録します。
-業種を選択、メールアドレスを記述
-
-利用規約へ同意すれば完了です。
-情報利用への同意
-LINE@とMessaging APIの利用規約への同意項目にチェックし作成
 
 ■Channelの基本設定
 
