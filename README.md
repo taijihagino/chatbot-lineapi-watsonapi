@@ -65,24 +65,27 @@ After complete the process you can access your Node-RED Flow Editor.
 It is very simple to meke Node-RED application foe this application. The completed flow view is below;
 ![Application Image](https://github.com/taijihagino/chatbot-lineapi-watsonapi/blob/master/images/012.png)
 
+Create server-side application which is called from LINE webhook, on Node-RED. It will call Watson Assistant API. You can download [completed flow definition](https://github.com/taijihagino/chatbot-lineapi-watsonapi)
 
-Node-REDでは、LINEからWebhookで呼び出されるサーバーサイド処理を作成します。Watson Assistant APIを呼び出すのもこのNode-REDになります。完成版のフローはこちらからダウンロード頂けます。https://github.com/taijihagino/chatbot-lineapi-watsonapi
+The first node "http in" is for configration URL to access this Node-RED application. Already set the URL "/line_hook" on the flow you downloaded.
 
-一番最初のノードである「http in」ノードでは、このサーバーサイドアプリケーション（実態はNode.jsアプリ）を呼び出すためのURLのパスを設定します。GitHubからダウンロードした定義を復元するとここのパスには"/line_hook”が設定されています。こちらは好きな文字列へ変更して頂いても結構です。
+Node-RED is just Node.js application, so the application you will create on it is also Node.js application. IBM Cloud alocated unique URL on your application. This application now you created on Node-RED has the URL below;
 
-Node-RED自体がそもそもNode.jsのウェブアプリケーションですので、IBM Cloud（PaaS）上で作成したNode-REDの環境では、既にURLが割り当てられています。このURLに「http in」で指定したパスを繋ぎ以下のようなURLになります。
-
-https://<IBM Cloudで作った際のNode-REDのアプリ名>.mybluemix.net/<http inで指定したパス>/
+`
+https:// *<Your Node-RED App Name>* .mybluemix.net/ *<Path you set on "http in node">* /
 
 例）https://fillgapapp01-nodered01.mybluemix.net/line_hook/
+`
 
 次に「Function」ノードの中を確認しましょう。
 1つ目の「Function」ノード「getText」は、LINE＠のAPIがNode-REDのWebhook URLを呼び出した時に渡してくる返信用トークンの値を保持しておくための処理です。
 
+`
 //flowへ格納
 flow.set(“replyToken”,msg.payload.events[0].replyToken);
 
 return msg;
+`
 
 flowへ格納した値は、同じフロー内であればいつでもどこでも取り出せます。
 
