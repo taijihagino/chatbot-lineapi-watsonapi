@@ -37,37 +37,34 @@ Select Assistant API you created.
 Launch Watson Assistant Tool. Press the Launch Button.
 ![Application Image](https://github.com/taijihagino/chatbot-lineapi-watsonapi/blob/master/images/005.png)
 
-Click the create button, open new flow window, but this time we use flow import function.
+Click the create button, open new flow window, but this time we use "flow import function". Click the Arrow Icon next Create button.
+![Application Image](https://github.com/taijihagino/chatbot-lineapi-watsonapi/blob/master/images/006.png)
 
-ここで、Createボタンをクリックすると会話フローの新規作成となります。
-今回は予め用意した非常に簡単な会話フロー（目的と意図も設定）の定義ファイル（JSON）をインポートしてみましょう。
-Createボタンの右隣にある上向き矢印のアイコンをクリックします。
-インポートアイコンをクリック
+You can download [the flow definision file](https://raw.githubusercontent.com/taijihagino/chatbot-lineapi-watsonapi/master/workspace-4f12f1bc-fb3c-47db-bca4-a0d32d18d1aa.json)  Press the Coose a file button to select JSON file.
+![Application Image](https://github.com/taijihagino/chatbot-lineapi-watsonapi/blob/master/images/007.png)
 
-こちらからダウンロードしたJSONを読み込みます。
-Choose a fileでJSONを選択
+Complete for preparing IBM Cloud Side. Do you want to work more? Sorry, that's all. 
+If you want to custom it more, you can modify it or create new workspace.
 
-これで完了です。
-カスタマイズしたい方は、これをもとに改変してもらうか、新規に作成をしてみてください。
+## Create Node-RED Application
+Create Node-RED on IBM Cloud. Select "Node-RED Starter" from Starter Kit category on Catalog. And then you can establish your Node-RED.
+![Application Image](https://github.com/taijihagino/chatbot-lineapi-watsonapi/blob/master/images/008.png)
 
-■Node-REDの作成
+Bind Watson Assistant API you created to your Node-RED.
+Select your Node-RED App.
+![Application Image](https://github.com/taijihagino/chatbot-lineapi-watsonapi/blob/master/images/009.png)
 
-Node-REDをIBM Cloudへ作成します。カタログからボイラープレート→Node-RED Starterを選択し、アプリを作成してください。
-作成に失敗する場合は、IoT Platform StarterでもOKです。
-Node-RED Starterを選択し作成
+Create new Connect from Connection Menu.
+![Application Image](https://github.com/taijihagino/chatbot-lineapi-watsonapi/blob/master/images/010.png)
 
-Node-RED作成後、先に作成したWatson Assistant APIをバインドします。
-作成したNode-REDアプリの画面から、
-作成したNode-REDアプリを選択
-接続メニューから接続の作成
-Watson Assistantを選択し「Connect」をクリック
+Click Connect button (appear with mouse over)
+![Application Image](https://github.com/taijihagino/chatbot-lineapi-watsonapi/blob/master/images/011.png)
 
-その後、再ステージングが行われるのでしばらくお待ち下さい。
+Please wait a moment for re-staging process. 
+After complete the process you can access your Node-RED Flow Editor.
+It is very simple to meke Node-RED application foe this application. The completed flow view is below;
+![Application Image](https://github.com/taijihagino/chatbot-lineapi-watsonapi/blob/master/images/012.png)
 
-再ステージングが完了したら、フローエディタへアクセスしてください。
-
-Node-RED自体は非常にシンプルなフローになります。まずは完成形のNode-REDフロー定義を見てみましょう。
-完成形フロー
 
 Node-REDでは、LINEからWebhookで呼び出されるサーバーサイド処理を作成します。Watson Assistant APIを呼び出すのもこのNode-REDになります。完成版のフローはこちらからダウンロード頂けます。https://github.com/taijihagino/chatbot-lineapi-watsonapi
 
