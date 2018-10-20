@@ -71,19 +71,19 @@ The first node "http in" is for configration URL to access this Node-RED applica
 
 Node-RED is just Node.js application, so the application you will create on it is also Node.js application. IBM Cloud alocated unique URL on your application. This application now you created on Node-RED has the URL below;
 
-`
+```
 https://<Your Node-RED App Name>.mybluemix.net/<Path you set on "http in node">/
 
 例）https://fillgapapp01-nodered01.mybluemix.net/line_hook/
-`
+```
 
 Next, check Function node. The first Function node "getText" is for keeping LINE API reply token.
-`
+```
 //flowへ格納
 flow.set(“replyToken”,msg.payload.events[0].replyToken);
 
 return msg;
-`
+```
 
 You can access the value saved the flow anytime anywhere.
 
