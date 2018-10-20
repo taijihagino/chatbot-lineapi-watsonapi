@@ -138,11 +138,13 @@ Login LINE developers [here](https://developers.line.me/).
 
 
 ### Create Provider
-Set your provider name. After filled out comfirm and create.
+Set your provider name.
 ![Application Image](https://github.com/taijihagino/chatbot-lineapi-watsonapi/blob/master/images/024.png)
+
+Comfirm and create
 ![Application Image](https://github.com/taijihagino/chatbot-lineapi-watsonapi/blob/master/images/025.png)
 
-And then, click "Create Channel" button on Messaging API.
+And then, click "Create Channel" button on Messaging API tile.
 ![Application Image](https://github.com/taijihagino/chatbot-lineapi-watsonapi/blob/master/images/026.png)
 
 ### Create New Channel
@@ -162,33 +164,35 @@ Agree the terms of service and then press the Agreement button.
 Check the two check box for these agreements, and press create button.
 ![Application Image](https://github.com/taijihagino/chatbot-lineapi-watsonapi/blob/master/images/031.png)
 
+### Basic Configration for Channel
+Click the tile of the channel you created.
+![Application Image](https://github.com/taijihagino/chatbot-lineapi-watsonapi/blob/master/images/032.png)
 
-■Channelの基本設定
+You should work just two.
+- Generate Channel access token (long-lived)
+- Set Webhook URL
 
-作成したチャネルの設定をしていきます。作成したチャネルのパネルをクリックします。
-チャネルの設定へ進む
+Generate Channel access token
+After the operation, you need to place this token on your Node-RED Function node.
+Press the issue button twice.
+![Application Image](https://github.com/taijihagino/chatbot-lineapi-watsonapi/blob/master/images/033.png)
 
-ここで必要なのは以下の2つになります。
-・アクセストークン（ロングターム）
-・Webhook URL
+![Application Image](https://github.com/taijihagino/chatbot-lineapi-watsonapi/blob/master/images/034.png)
 
-アクセストークンを生成します。
-生成したトークンは、前述のNode-REDの「Function」ノード内に記述してください。
-再発行ボタンをクリック
-再発行ボタンをクリック
+Config these settings below;
+- Use Webhooks -> Enabled
+- Webhook URL -> Your Node-RED app URL
+- Auto-reply messages -> Disabled
 
-次に、以下を設定してください。
-・Webhook送信を「利用する」へ
-・Webhook URLに先程Node-REDの章で説明したWebhook URLを記述
-・自動応答メッセージを「利用しない」へ
+Congrats! You finaly did it!
 
-これで、すべて完了しました。
-動作確認
 
-Channel設定画面の下方にQRコードが生成されているので、これを自分のスマホのLINEアプリから、友達追加→QRコードで追加してください。
-友達追加用のQRコード
-ネコがチャットボットで会話してくれる
+### Check LINE Chat Application
+Add this chatbot to your LINE friends with QR Code. You can find QR Code bottom of LINE developers basic information page.
+Mobile LINE App: Add Friend -> QR Code
+![Application Image](https://github.com/taijihagino/chatbot-lineapi-watsonapi/blob/master/images/035.png)
 
-無事、みなさんのお持ちのスマホ上へ、このチャットボットが登場し使えるようになったのではないでしょうか。
+![Application Image](https://github.com/taijihagino/chatbot-lineapi-watsonapi/blob/master/images/036.png)
 
-ぜひ、これをベースにみなさまアレンジを加えて試してみてくださいね。
+I believe you got your chatbot on your smartphone LINE app.
+Good luck modify this application more!
