@@ -72,14 +72,12 @@ The first node "http in" is for configration URL to access this Node-RED applica
 Node-RED is just Node.js application, so the application you will create on it is also Node.js application. IBM Cloud alocated unique URL on your application. This application now you created on Node-RED has the URL below;
 
 `
-https:// *<Your Node-RED App Name>* .mybluemix.net/ *<Path you set on "http in node">* /
+https://<Your Node-RED App Name>.mybluemix.net/<Path you set on "http in node">/
 
 例）https://fillgapapp01-nodered01.mybluemix.net/line_hook/
 `
 
-次に「Function」ノードの中を確認しましょう。
-1つ目の「Function」ノード「getText」は、LINE＠のAPIがNode-REDのWebhook URLを呼び出した時に渡してくる返信用トークンの値を保持しておくための処理です。
-
+Next, check Function node. The first Function node "getText" is for keeping LINE API reply token.
 `
 //flowへ格納
 flow.set(“replyToken”,msg.payload.events[0].replyToken);
@@ -87,10 +85,10 @@ flow.set(“replyToken”,msg.payload.events[0].replyToken);
 return msg;
 `
 
-flowへ格納した値は、同じフロー内であればいつでもどこでも取り出せます。
+You can access the value saved the flow anytime anywhere.
 
-次に「Change」ノードです。
-Watson Assistant APIが受けられる形（msg.payload）に、LINE@から投げられてきた会話文を入れ直します。
+Next, check Change node. It is for replacing the talking sentence from LINE to accept by Watson Assistant API.
+![Application Image](https://github.com/taijihagino/chatbot-lineapi-watsonapi/blob/master/images/013.png)
 
 そうしたら、実際にWatson Assistant APIを呼び出します。
 AssistantのワークスペースのIDを設定してください。IBM CloudでNode-REDとAssistant APIをバインドしてあればこのような設定画面となり、ユーザー、パスワードの資格情報を使った設定は不要です。
