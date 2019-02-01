@@ -90,7 +90,8 @@ You can access the value saved the flow anytime anywhere.
 First Change node, it is for replacing the talking sentence from LINE to accept by Watson Assistant API.
 ![Application Image](https://github.com/taijihagino/chatbot-lineapi-watsonapi/blob/master/images/013.png)
 
-Call Watson Assistant API. Place your Assistant Workspace ID. You already bind Assistant to Node-RED, so no need to config credentials.
+Call Watson Assistant API. Place your Assistant Workspace ID.
+You already bind Assistant to Node-RED, so no need to config credentials.
 ![Application Image](https://github.com/taijihagino/chatbot-lineapi-watsonapi/blob/master/images/014.png)
 
 Second Change node, it is for replace parameter from the response of Assistant to "msg.payload.optext".
