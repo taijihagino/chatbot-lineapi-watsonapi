@@ -57,7 +57,7 @@ Select your Node-RED App.
 Create new Connect from Connection Menu.
 ![Application Image](https://github.com/taijihagino/chatbot-lineapi-watsonapi/blob/master/images/010.png)
 
-Click Connect button (appear with mouse over)
+Click Connect button (appear with mouse over) Please select default authentication.
 ![Application Image](https://github.com/taijihagino/chatbot-lineapi-watsonapi/blob/master/images/011.png)
 
 Please wait a moment for re-staging process. 
