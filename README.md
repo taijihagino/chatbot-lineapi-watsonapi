@@ -159,6 +159,7 @@ Config any informations which is needed for the channel. The each values are bel
 ```
 
 Agree the terms of service and then press the Agreement button.
+* Sorry, it's only in Japanese...
 ![Application Image](https://github.com/taijihagino/chatbot-lineapi-watsonapi/blob/master/images/030.png)
 
 Check the two check box for these agreements, and press create button.
